@@ -4,9 +4,17 @@
 #
 #    pip-compile --output-file requirements.txt requirements.in
 #
-cython==0.25.2
+aiofiles==0.3.1           # via sanic
+aiohttp==2.0.7
+async-timeout==1.2.0      # via aiohttp
+chardet==3.0.2            # via aiohttp
 elizabeth==0.3.28
-falcon==1.1.0
-python-mimeparse==1.6.0   # via falcon
-six==1.10.0               # via falcon
-ujson==1.35
+httptools==0.0.9          # via sanic
+multidict==2.1.4          # via aiohttp, yarl
+sanic-cors==0.5.1.0
+sanic==0.5.1
+simple_settings==0.12.0
+ujson==1.35               # via sanic
+uvloop==0.8.0             # via sanic
+websockets==3.3           # via sanic
+yarl==0.10.0              # via aiohttp
