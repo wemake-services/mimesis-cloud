@@ -1,4 +1,4 @@
 cython==0.25.2
 elizabeth==0.3.28
-falcon==1.1.0
+sanic==0.5.1
 ujson==1.35
