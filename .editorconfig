@@ -12,6 +12,5 @@ insert_final_newline = true
 [*.py]
 indent_size = 4
 
-[*.{md,rst,in}]
-indent_style = ignore
-indent_size = ignore
+[*.{md}]
+indent_style = 2
