@@ -18,3 +18,4 @@ ujson==1.35               # via sanic
 uvloop==0.8.0             # via sanic
 websockets==3.3           # via sanic
 yarl==0.10.0              # via aiohttp
+pytest==3.0.7
