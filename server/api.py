@@ -1,8 +1,9 @@
 from elizabeth import Generic
+
 from sanic import Blueprint, response
+from sanic.exceptions import NotFound
 from sanic.request import Request
 from sanic.response import HTTPResponse
-from sanic.exceptions import NotFound
 
 from simple_settings import settings
 
@@ -34,6 +35,7 @@ async def handle_resource(request: Request,
     try:
         obj = getattr(g, resource)
         obj = getattr(obj, sub)
+
     except AttributeError:
         # This means that one of the attributes
         # was not found, raise 404:

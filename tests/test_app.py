@@ -21,17 +21,17 @@ def test_bad_resource(app):
 
 
 def test_bad_sub_name(app):
-    _, response = app.test_client.get("/api/food/badsubmane")
+    _, response = app.test_client.get('/api/food/badsubmane')
     assert response.status == 404
 
 
 def test_catch_not_found_404(app):
     @app.exception([NotFound])
     def exception_list(request, exception):
-        return text("not_found")
+        return text('not_found')
 
     _, response = app.test_client.get('/not_found_404')
-    assert response.text == "not_found"
+    assert response.text == 'not_found'
 
     _, response = app.test_client.get('/api/food/dich')
-    assert response.text == "not_found"
+    assert response.text == 'not_found'
