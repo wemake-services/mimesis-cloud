@@ -1,5 +1,6 @@
 # elizabeth-cloud
 
+[![Build Status](https://travis-ci.org/wemake-services/elizabeth-cloud.svg?branch=master)](https://travis-ci.org/wemake-services/elizabeth-cloud) [![Coverage Status](https://coveralls.io/repos/github/wemake-services/elizabeth-cloud/badge.svg?branch=master)](https://coveralls.io/github/wemake-services/elizabeth-cloud?branch=master)
 
 ## Prerequirements
 
