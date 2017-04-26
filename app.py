@@ -1,10 +1,9 @@
 from sanic import Sanic
-
 from sanic_cors import CORS
 
-from server.api import api
-
 from simple_settings import settings
+
+from server.api import api
 
 
 # Core:

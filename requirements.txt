@@ -6,24 +6,28 @@
 #
 aiofiles==0.3.1           # via sanic
 aiohttp==2.0.7
+apipkg==1.4               # via execnet
 async-timeout==1.2.0      # via aiohttp
 chardet==3.0.2            # via aiohttp
 coverage==4.3.4           # via pytest-cov
 elizabeth==0.3.28
+execnet==1.4.1            # via pytest-cache
 flake8-builtins==0.2
 flake8-commas==0.4.3
-flake8-import-order==0.12
 flake8-quotes==0.9.0
 flake8==3.3.0             # via flake8-builtins, flake8-commas, flake8-quotes, pytest-flake8
 httptools==0.0.9          # via sanic
+isort==4.2.5              # via pytest-isort
 mccabe==0.6.1             # via flake8
 multidict==2.1.4          # via aiohttp, yarl
 py==1.4.33                # via pytest
-pycodestyle==2.3.1        # via flake8, flake8-import-order
+pycodestyle==2.3.1        # via flake8
 pyflakes==1.5.0           # via flake8
+pytest-cache==1.0         # via pytest-isort
 pytest-cov==2.4.0
 pytest-env==0.6.0
 pytest-flake8==0.8.1
+pytest-isort==0.1.0
 pytest==3.0.7
 sanic-cors==0.5.1.0
 sanic==0.5.1

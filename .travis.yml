@@ -3,10 +3,25 @@ language: python
 sudo: false
 
 python:
-  - "3.6"
+  - 3.6
 
 install:
   - pip install -r requirements.txt
 
 script:
   - py.test --verbose --color=yes
+
+after_success:
+  - pip install coveralls  # to push coverage information
+  - coveralls
+
+deploy:
+  provider: heroku
+  app: elizabeth-cloud
+  api_key: $HEROKU_API_KEY
+  on: master
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change

@@ -63,3 +63,12 @@ So, the production command will be:
 ```bash
 SIMPLE_SETTINGS='server.config.production' python -m sanic app.app --host=127.0.0.1 --port=8000 --workers=4
 ```
+
+
+## Testing
+
+We are using `py.test` for testing. Just run `py.test` to run all the tests with coverage, linting, imports order and other features. See `pytest.ini` for the whole list of settings and plugins.
+
+### CI/CD
+
+We are using `travis` to run tests on `CI`. It also deploys your code to `heroku` production server on successful push to `master` branch. So be careful.

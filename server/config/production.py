@@ -5,9 +5,9 @@ These settings are used to deploy to Heroku.
 It is required to modify them, if deploying to other infrastructure.
 """
 
-from ._common import *  # NOQA
-
 import os
+
+from ._common import *  # NOQA
 
 
 PORT = os.environ.get('PORT', 8000)
