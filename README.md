@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/wemake-services/elizabeth-cloud.svg?branch=master)](https://travis-ci.org/wemake-services/elizabeth-cloud) [![Coverage Status](https://coveralls.io/repos/github/wemake-services/elizabeth-cloud/badge.svg?branch=master)](https://coveralls.io/github/wemake-services/elizabeth-cloud?branch=master)
 
+
 ## Prerequirements
 
 We are using `python-3.6.1` to run this app.
@@ -43,13 +44,7 @@ To add new dependency you will need to:
 This command will run `sanic` with default `development` settings:
 
 ```bash
-python -m sanic app.app --host=127.0.0.1 --port=8000
-```
-
-Or you can just run the `app.py` file:
-
-```bash
-python app.py
+SIMPLE_SETTINGS=config.development python server/app.py
 ```
 
 ### Settings
@@ -58,12 +53,7 @@ To specify other settings we are using `simple_settings` module.
 
 ### Workers
 
-To specify different number of workers add that option: `--workers=NUMBER`
-So, the production command will be:
-
-```bash
-SIMPLE_SETTINGS='server.config.production' python -m sanic app.app --host=127.0.0.1 --port=8000 --workers=4
-```
+To specify different number of workers change the `WORKERS` variable in the config file.
 
 
 ## Testing

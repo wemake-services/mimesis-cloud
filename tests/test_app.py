@@ -6,7 +6,7 @@ from sanic.response import text
 
 @pytest.fixture(scope='module')
 def app():
-    from app import app
+    from server.app import app
     return app
 
 
