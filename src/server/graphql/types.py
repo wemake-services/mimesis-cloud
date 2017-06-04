@@ -1,5 +1,9 @@
+import inspect
+
 from collections import OrderedDict
 from functools import partial
+
+import graphene
 
 from elizabeth import Generic
 
@@ -24,17 +28,40 @@ def get_fields(instance, callables=False):
     return fields
 
 
-def resolve(name, obj, *_args, **_kwargs):
+def resolve(name, obj, context, *_args, **_kwargs):
     method = getattr(obj, name)
-    return method() if callable(method) else method
+    return method(**context) if callable(method) else method
+
+
+def get_field_args(field):
+    types = {
+        str: graphene.String,
+        bool: graphene.Boolean,
+        int: graphene.Int,
+        float: graphene.Float,
+    }
+
+    try:
+        args = inspect.signature(field)
+        result = {}
+        for name, arg in args.parameters.items():
+            if arg.default is not None:
+                custom_type = types[type(arg.default)]
+            else:
+                custom_type = graphene.String
+
+            result.update({name: custom_type()})
+        return result
+    except (KeyError, ValueError):
+        return {}
 
 
 def make_resolvable_fields(inner_fields):
     result = {}
 
-    for name, _ in inner_fields.items():
+    for name, field in inner_fields.items():
         result.update({
-            name: Field(String),
+            name: Field(String, **get_field_args(field)),
             'resolve_{}'.format(name): partial(resolve, name),
         })
     return result
