@@ -4,12 +4,14 @@ from sanic_cors import CORS
 from simple_settings import settings
 
 from server.api import api
+from server.graphql import view
 
 
 # Core:
 app = Sanic('elizabeth-cloud')
 app.config.update(settings.as_dict())
 app.blueprint(api)
+app.add_route(view, '/ql')
 
 # Plugins:
 CORS(app=app, methods=['GET', 'HEAD', 'OPTION'], resources={

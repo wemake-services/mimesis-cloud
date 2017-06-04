@@ -1,13 +1,5 @@
-import pytest
-
 from sanic.exceptions import NotFound
 from sanic.response import text
-
-
-@pytest.fixture(scope='module')
-def app():
-    from server.app import app
-    return app
 
 
 def test_resource_is_ok(app):

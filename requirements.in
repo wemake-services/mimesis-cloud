@@ -1,8 +1,10 @@
 # Runtime requirements:
 
 elizabeth==0.3.28
+graphene==1.4
 sanic==0.5.1
 sanic-cors==0.5.1.0
+sanic-graphql==1.1.0
 simple_settings==0.12.0
 
 # Test requirements:
