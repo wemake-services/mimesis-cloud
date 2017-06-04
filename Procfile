@@ -1,1 +1,1 @@
-web: SIMPLE_SETTINGS='config.production' python server/app.py
+web: SIMPLE_SETTINGS='config.production' python src/app.py
