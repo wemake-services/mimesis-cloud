@@ -1,22 +1,22 @@
 import graphene
 
-from elizabeth import Generic
+from mimesis import Generic
 
-from .types import ElizabethType
+from .types import MimesisType
 
 
-class Elizabeth(ElizabethType):
+class Mimesis(MimesisType):
     pass
 
 
 class Query(graphene.ObjectType):
-    elizabeth = graphene.Field(
-        Elizabeth,
+    mimesis = graphene.Field(
+        Mimesis,
         required=True,
         locale=graphene.String(),
     )
 
-    def resolve_elizabeth(self, context, *args, **kwargs):
+    def resolve_mimesis(self, context, *args, **kwargs):
         return Generic(context.get('locale', 'en'))
 
 

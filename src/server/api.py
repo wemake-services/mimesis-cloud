@@ -1,4 +1,4 @@
-from elizabeth import Generic
+from mimesis import Generic
 
 from sanic import Blueprint, response
 from sanic.exceptions import NotFound
@@ -15,14 +15,14 @@ api = Blueprint('api', url_prefix='/api')
 async def handle_resource(request: Request,
                           resource: str, sub: str) -> HTTPResponse:
     """
-    This route is a wrapper of :class:`elizabeth.Generic`.
+    This route is a wrapper of :class:`mimesis.Generic`.
     It is used to serve different data over the REST API.
 
     Args:
         request: Sanic's request instance
         resource: first part of the url,
-            name of elizabeth's resource
-        sub: subname of the elizabeth's resource
+            name of mimesis's resource
+        sub: subname of the mimesis's resource
 
     Returns:
         HTTPResponse: Sanic's response with json body,

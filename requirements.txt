@@ -10,7 +10,6 @@ apipkg==1.4               # via execnet
 async-timeout==1.2.0      # via aiohttp
 chardet==3.0.2            # via aiohttp
 coverage==4.3.4           # via pytest-cov
-elizabeth==0.3.28
 execnet==1.4.1            # via pytest-cache
 flake8-builtins==0.2
 flake8-commas==0.4.3
@@ -23,6 +22,7 @@ graphql-server-core==1.0.dev20170322001  # via sanic-graphql
 httptools==0.0.9          # via sanic
 isort==4.2.5              # via pytest-isort
 mccabe==0.6.1             # via flake8
+mimesis==1.0.4
 multidict==2.1.4          # via aiohttp, yarl
 promise==2.0.2            # via graphene, graphql-core, graphql-relay, graphql-server-core
 py==1.4.33                # via pytest

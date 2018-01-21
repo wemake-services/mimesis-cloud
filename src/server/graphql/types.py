@@ -5,13 +5,12 @@ from functools import partial
 
 import graphene
 
-from elizabeth import Generic
-
 from graphene import Field, ObjectType, String
 from graphene.types.objecttype import ObjectTypeMeta
 from graphene.types.options import Options
 from graphene.types.utils import merge
 from graphene.utils.is_base_type import is_base_type
+from mimesis import Generic
 
 
 def get_fields(instance, callables=False):
@@ -120,5 +119,5 @@ class GenericTypeMeta(ObjectTypeMeta):
         return cls
 
 
-class ElizabethType(ObjectType, metaclass=GenericTypeMeta):
+class MimesisType(ObjectType, metaclass=GenericTypeMeta):
     pass

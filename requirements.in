@@ -1,6 +1,6 @@
 # Runtime requirements:
 
-elizabeth==0.3.28
+mimesis==1.0.4
 graphene==1.4
 sanic==0.5.1
 sanic-cors==0.5.1.0

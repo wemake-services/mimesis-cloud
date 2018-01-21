@@ -8,7 +8,7 @@ from server.graphql import view
 
 
 # Core:
-app = Sanic('elizabeth-cloud')
+app = Sanic('mimesis-cloud')
 app.config.update(settings.as_dict())
 app.blueprint(api)
 app.add_route(view, '/ql')
